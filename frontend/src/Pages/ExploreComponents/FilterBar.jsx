@@ -11,6 +11,7 @@ import {
     defaultDimensionValues,
 } from "./FilterUtils";
 import DoubleSlider from "./DoubleSlider";
+import './Style.css'
 
 const FilterBar = (props) => {
     const [typeFilter, setTypeFilter] = useState(null);
@@ -44,6 +45,7 @@ const FilterBar = (props) => {
     const handleDateFilterChange = (bounds) => {
         console.log(bounds);
         setDateFilter(bounds);
+        
     };
 
     const [dimensionFilter, setDimensionFilter] = useState(
@@ -147,12 +149,15 @@ const FilterBar = (props) => {
             </div>
             <div className='headings'>
                 <small>Date:</small>
+                <div><small id="date">{defaultDateValues[0].toString() + ' AH' + ' - ' + defaultDateValues[1].toString() + ' AH'}</small></div>
                 <DoubleSlider
                     min={defaultDateValues[0]}
                     max={defaultDateValues[1]}
                     step={1}
                     defaultValue={defaultDateValues}
-                    onChange={(bounds) => handleDateFilterChange(bounds)}
+                    onChange={(bounds) => {handleDateFilterChange(bounds); 
+                        document.getElementById('date').innerText = bounds[0].toString() + ' AH' + ' - ' + bounds[1].toString() + ' AH';}
+                    }
                 />
             </div>
             <div className='headings'>
@@ -162,7 +167,9 @@ const FilterBar = (props) => {
                     max={defaultDimensionValues[1]}
                     step={1}
                     defaultValue={defaultDimensionValues}
-                    onChange={(bounds) => handleDimensionFilterChange(bounds)}
+                    onChange={(bounds) => handleDimensionFilterChange(bounds)
+                    }
+                    
                 />
             </div>
         </div>
