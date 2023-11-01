@@ -23,6 +23,7 @@ class Text(BaseModel):
     script: str
     pageCount: str
     dimensions: str
+    dimensionLabel: str
     additionalInfo: str
     specificEditionBibliography: str
     contentLocation: str
@@ -50,10 +51,10 @@ def parseLineToText(line):
     return Text(authorID=line[0], authorNameOriginal=line[1], authorNameTranslit=line[2], titleID=line[3], titleOriginal=line[5],
                 titleTranslit=line[6], language=line[7], genre=line[8], textType=line[9], date=line[10], originalLocation=line[11],
                 publisher=line[12], script=line[13], pageCount=line[14], dimensions=line[15], additionalInfo=line[16],
-                specificEditionBibliography=line[17], contentLocation=line[18], generalBibliography=line[19], notes=line[20], normalizedDate=normalizeDate(line[10]))
+                specificEditionBibliography=line[17], contentLocation=line[18], generalBibliography=line[19], notes=line[20], dimensionLabel=line[21], normalizedDate=normalizeDate(line[10]))
 
 
-with open('./Database.csv', 'r') as csvfile:
+with open('./label_dataset.csv', 'r') as csvfile:
     reader = csv.reader(csvfile)
     for i, row in enumerate(reader):
         if i != 0:

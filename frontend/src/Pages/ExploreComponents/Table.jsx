@@ -66,6 +66,7 @@ const Table = (props) => {
                                         {r.textType ? r.textType : defaultValue}
                                     </td>
                                     <td>{r.date ? r.date : defaultValue}</td>
+                                    <td>{r.dimensionLabel ? r.dimensionLabel : defaultValue}</td>
                                 </tr>
                             </>
                         );

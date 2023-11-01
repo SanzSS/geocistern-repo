@@ -37,6 +37,17 @@ export default function Explore() {
             ) {
                 return false;
             }
+
+            if (
+                dimensionFilter &&
+                dimensionFilter !== "All" &&
+                !row["dimensionLabel"]
+                    .toLowerCase()
+                    .includes(dimensionFilter.toLowerCase())
+            ) {
+                return false;
+            }
+
             if (
                 languageFilter &&
                 languageFilter !== "All" &&
@@ -91,7 +102,7 @@ export default function Explore() {
     const [scriptFilter, setScriptFilterKeys] = useState(null);
     const [genreFilter, setGenreFilter] = useState([]);
     const [dateFilter, setDateFilter] = useState([]);
-    const [dimensionFilter, setDimensionFilter] = useState([]);
+    const [dimensionFilter, setDimensionFilter] = useState(null);
 
     return (
         <div>
@@ -106,9 +117,7 @@ export default function Explore() {
                 }
                 filterByGenre={(genreFilter) => setGenreFilter(genreFilter)}
                 filterByDate={(dateFilter) => setDateFilter(dateFilter)}
-                filterByDimension={(dimensionFilter) =>
-                    setDimensionFilter(dimensionFilter)
-                }
+                filterByDimension={(dimensionFilter) => setDimensionFilter(dimensionFilter)}
             />
             <Table database={filterData(database)}></Table>
         </div>
