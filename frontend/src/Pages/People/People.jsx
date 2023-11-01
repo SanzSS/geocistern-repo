@@ -4,8 +4,15 @@ export default function People() {
             <h3>People</h3>
             <h4>Current Contributors:</h4>
             <article>
-                <div>
-                    <br clear='left' />
+                <div className="grid">
+                    <img
+                        src='https://geocistern.github.io/images/Adrien%20Zakar_2018_01.jpg'
+                        alt='AdrienZakar'
+                        width='245'
+                        height='350'
+                        align='left'
+                    ></img>
+                    <div>
                     <strong>Adrien Zakar</strong> is Assistant Professor at the
                     University of Toronto's Department of Near and Middle
                     Eastern Civilizations and the Institute for the History and
@@ -27,14 +34,7 @@ export default function People() {
                     attention economy and global shipping routes. For more
                     information, visit:{" "}
                     <a href='https://www.adrienzakar.com/'>adrienzakar.com</a>
-                    <img
-                        src='https://geocistern.github.io/images/Adrien%20Zakar_2018_01.jpg'
-                        alt='AdrienZakar'
-                        width='245'
-                        height='350'
-                        align='left'
-                    ></img>
-                    <br clear='left' />
+                    </div>   
                 </div>
             </article>
             <article>
@@ -67,6 +67,7 @@ export default function People() {
                 </div>
             </article>
             <article>
+                <div className="grid">
                 <img
                     src='https://geocistern.github.io/images/umar.jpeg'
                     alt='UmarPatel'
@@ -74,7 +75,7 @@ export default function People() {
                     height='350'
                     // style='width:245px;height:350px;'
                 ></img>
-                <br />
+                <div>
                 <strong>Umar Patel</strong> is a second year undergraduate
                 student double majoring in Computer Science and Archaeology and
                 minoring in Mechanical Engineering. Umar holds widespread
@@ -98,8 +99,13 @@ export default function People() {
                 time, Umar loves to tinker with Arduinos and Raspberry Pis as
                 well as read about Medieval British history dating back to the
                 Anglo-Saxons.
+                </div>
+                
+                </div>
+                
             </article>
             <article>
+                <div className="grid">
                 <img
                     src='https://geocistern.github.io/images/isin.jpg'
                     alt='IsinTaylan'
@@ -107,7 +113,7 @@ export default function People() {
                     height='250'
                     // style='width:245px;height:350px;'
                 ></img>
-                <br />
+                <div>
                 <strong>Isin Taylan</strong> is a Ph.D. candidate in the
                 Department of History at Yale University. She studied Social and
                 Political Sciences with a minor in Art Theory and Criticism at
@@ -122,8 +128,13 @@ export default function People() {
                 Cartography which introduces early Ottoman atlases as a source
                 for the history of cartography. She is also a recording team
                 member and host at the Ottoman History Podcast.
+                </div>
+                
+                </div>
+                
             </article>
             <article>
+                <div className="grid">
                 <img
                     src='https://geocistern.github.io/images/jayna.jpg'
                     alt='JaynaHuang'
@@ -131,7 +142,7 @@ export default function People() {
                     height='256'
                     // style='width:245px;height:350px;'
                 ></img>
-                <br />
+                <div>
                 <strong>Jayna Huang</strong> is a high school student interested
                 in computer science, history, and sociology. She especially
                 enjoys perusing the development of early societies, using code
@@ -141,9 +152,14 @@ export default function People() {
                 and also has created this website to host it. In her free time,
                 Jayna enjoys playing soccer, watching the sunset, and playing
                 guitar.
+                </div>
+                
+                </div>
+                
             </article>
             <h4>Past Contributors:</h4>
             <article>
+                <div className="grid">
                 <img
                     src='https://geocistern.github.io/images/keoni.jpeg'
                     alt='KeoniRodriguez'
@@ -151,13 +167,17 @@ export default function People() {
                     height='240'
                     // style='width:245px;height:350px;'
                 ></img>
-                <br />
+                <div>
                 <strong>Keoni Rodriguez</strong> is a BA (History) and MA (Earth
                 Systems) candidate at Stanford from San Diego, CA. Their
                 scholarship is primarily concerned with Indigenous environmental
                 history and identity formation and they worked with the "Mapping
                 Geographical Knowledge in the Middle East" project in Winter
                 2021.
+                </div>
+                
+                </div>
+                
             </article>
         </div>
     );

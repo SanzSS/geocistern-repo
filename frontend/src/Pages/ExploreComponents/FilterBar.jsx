@@ -8,7 +8,7 @@ import {
     scriptFilterKeys,
     genreFilterKeys,
     defaultDateValues,
-    defaultDimensionValues,
+    dimensionFilterKeys,
 } from "./FilterUtils";
 import DoubleSlider from "./DoubleSlider";
 import './Style.css'
@@ -23,6 +23,11 @@ const FilterBar = (props) => {
     const handleLanguageFilterChange = (e) => {
         setLanguageFilter(e.target.value);
     };
+
+    const [dimensionFilter, setDimensionFilter] = useState(null);
+    const handleDimensionFilterChange = (e) => {
+        setDimensionFilter(e.target.value);
+    }
 
     const [scriptFilter, setScriptFilter] = useState(null);
     const handleScriptFilterChange = (e) => {
@@ -48,13 +53,13 @@ const FilterBar = (props) => {
         
     };
 
-    const [dimensionFilter, setDimensionFilter] = useState(
-        defaultDimensionValues
-    );
-    const handleDimensionFilterChange = (bounds) => {
-        console.log(bounds);
-        setDimensionFilter(bounds);
-    };
+    // const [dimensionFilter, setDimensionFilter] = useState(
+    //     defaultDimensionValues
+    // );
+    // const handleDimensionFilterChange = (bounds) => {
+    //     console.log(bounds);
+    //     setDimensionFilter(bounds);
+    // };
 
     // Handles the lag in asynchronous function setState()
     useEffect(() => {
@@ -161,16 +166,15 @@ const FilterBar = (props) => {
                 />
             </div>
             <div className='headings'>
-                <small>Dimensions:</small>
-                <DoubleSlider
-                    min={defaultDimensionValues[0]}
-                    max={defaultDimensionValues[1]}
-                    step={1}
-                    defaultValue={defaultDimensionValues}
-                    onChange={(bounds) => handleDimensionFilterChange(bounds)
-                    }
-                    
-                />
+            <small>Dimension:</small>
+                <select id='type' required onChange={handleDimensionFilterChange}>
+                    <option value={null} selected>
+                        All
+                    </option>
+                    {dimensionFilterKeys.map((key) => {
+                        return <option value={key}>{key}</option>;
+                    })}
+                </select>
             </div>
         </div>
     );

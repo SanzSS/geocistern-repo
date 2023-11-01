@@ -2,6 +2,15 @@ export const typeFilterKeys = ["Manuscript", "Print"];
 
 export const languageFilterKeys = ["Turkish", "Arabic"];
 
+export const dimensionFilterKeys = [
+    "S",
+    "L",
+    "M",
+    "XL",
+    "XXL",
+    "Sumo"
+];
+
 export const scriptFilterKeys = [
     "Nesihle",
     "Talikle",
